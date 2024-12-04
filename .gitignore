@@ -1,0 +1,13 @@
+DEA_*/
+FragPipe*/
+qc_*/
+*.md
+*.tex
+Readme_*/
+config*.yml
+prolfqua_*.sh
+*.zip
+_DiffExpQC.Rmd
+_Grp2Analysis_V2.Rmd
+bibliography.bib
+prolfquapp_docker.sh

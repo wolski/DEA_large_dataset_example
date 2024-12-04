@@ -1,0 +1,5 @@
+17937 MB ./FragPipe_f187_diann/report.tsv
+1872 MB ./FragPipe_f20_diann/f20_report.tsv
+1530 MB ./FragPipe_f20_msstats/msstats20.csv
+35922 MB ./FragPipe_f374_diann/x2_report.tsv
+53927 MB ./FragPipe_f561_diann/x3_report.tsv

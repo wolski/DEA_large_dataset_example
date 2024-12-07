@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Supporting Material S1: Example analysis of a dataset with two factors using prolfquapp</title>
+<title>Supporting Material S2: Example analysis of a dataset with two factors using prolfquapp</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -108,23 +108,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#example-analysis-using-prolfquapp" id="toc-example-analysis-using-prolfquapp" class="nav-link active" data-scroll-target="#example-analysis-using-prolfquapp">Example analysis using prolfquapp</a></li>
-  <li><a href="#replicating-the-document" id="toc-replicating-the-document" class="nav-link" data-scroll-target="#replicating-the-document">Replicating the document</a>
-  <ul class="collapse">
+  <li><a href="#example-analysis-of-rmsv000000696.1-dataset-using-prolfquapp" id="toc-example-analysis-of-rmsv000000696.1-dataset-using-prolfquapp" class="nav-link active" data-scroll-target="#example-analysis-of-rmsv000000696.1-dataset-using-prolfquapp">Example analysis of RMSV000000696.1 dataset using prolfquapp</a></li>
+  <li><a href="#replicating-the-document" id="toc-replicating-the-document" class="nav-link" data-scroll-target="#replicating-the-document">Replicating the document</a></li>
   <li><a href="#creating-a-subset-of-20-files" id="toc-creating-a-subset-of-20-files" class="nav-link" data-scroll-target="#creating-a-subset-of-20-files">Creating a Subset of 20 files</a></li>
   <li><a href="#duplicating-and-triplicating-the-dataset" id="toc-duplicating-and-triplicating-the-dataset" class="nav-link" data-scroll-target="#duplicating-and-triplicating-the-dataset">Duplicating and triplicating the dataset</a></li>
   <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
   <li><a href="#diann-reports.tsv-file-for-20-samples" id="toc-diann-reports.tsv-file-for-20-samples" class="nav-link" data-scroll-target="#diann-reports.tsv-file-for-20-samples">DIANN reports.tsv file for 20 samples</a>
   <ul class="collapse">
-  <li><a href="#example-of-parallel-group-design-with-missingness-modelling" id="toc-example-of-parallel-group-design-with-missingness-modelling" class="nav-link" data-scroll-target="#example-of-parallel-group-design-with-missingness-modelling">Example of parallel group design, with missingness modelling</a></li>
-  <li><a href="#example-of-factorial-design-and-no-missingness-modelling" id="toc-example-of-factorial-design-and-no-missingness-modelling" class="nav-link" data-scroll-target="#example-of-factorial-design-and-no-missingness-modelling">Example of factorial design, and no missingness modelling</a></li>
-  <li><a href="#example-peptide-level-analysis" id="toc-example-peptide-level-analysis" class="nav-link" data-scroll-target="#example-peptide-level-analysis">Example PEPTIDE level analysis</a></li>
+  <li><a href="#example-of-dea-with-parallel-group-design-with-missingness-modelling" id="toc-example-of-dea-with-parallel-group-design-with-missingness-modelling" class="nav-link" data-scroll-target="#example-of-dea-with-parallel-group-design-with-missingness-modelling">Example of DEA with parallel group design, with missingness modelling</a></li>
+  <li><a href="#example-of-dea-with-factorial-design-and-no-missingness-modelling" id="toc-example-of-dea-with-factorial-design-and-no-missingness-modelling" class="nav-link" data-scroll-target="#example-of-dea-with-factorial-design-and-no-missingness-modelling">Example of DEA with factorial design, and no missingness modelling</a></li>
   </ul></li>
+  <li><a href="#example-peptide-level-analysis" id="toc-example-peptide-level-analysis" class="nav-link" data-scroll-target="#example-peptide-level-analysis">Example PEPTIDE level analysis</a></li>
   <li><a href="#diann-reports.tsv-file-for-187-samples" id="toc-diann-reports.tsv-file-for-187-samples" class="nav-link" data-scroll-target="#diann-reports.tsv-file-for-187-samples">DIANN reports.tsv file for 187 samples</a></li>
   <li><a href="#msstats.tsv-formatted-output-for-dataset-with-20-files." id="toc-msstats.tsv-formatted-output-for-dataset-with-20-files." class="nav-link" data-scroll-target="#msstats.tsv-formatted-output-for-dataset-with-20-files.">MSstats.tsv formatted output for dataset with 20 files.</a></li>
   <li><a href="#diann-report.tsv-with-374-samples." id="toc-diann-report.tsv-with-374-samples." class="nav-link" data-scroll-target="#diann-report.tsv-with-374-samples.">DIANN report.tsv with 374 samples.</a></li>
   <li><a href="#diann-report.tsv-with-561-samples." id="toc-diann-report.tsv-with-561-samples." class="nav-link" data-scroll-target="#diann-report.tsv-with-561-samples.">DIANN report.tsv with 561 samples.</a></li>
-  </ul></li>
   <li><a href="#r-version-and-session-information" id="toc-r-version-and-session-information" class="nav-link" data-scroll-target="#r-version-and-session-information">R version and session information</a></li>
   </ul>
 </nav>
@@ -133,7 +131,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Supporting Material S1: Example analysis of a dataset with two factors using prolfquapp</h1>
+<h1 class="title">Supporting Material S2: Example analysis of a dataset with two factors using prolfquapp</h1>
 </div>
 
 
@@ -150,8 +148,8 @@ window.Quarto = {
 </header>
 
 
-<section id="example-analysis-using-prolfquapp" class="level2">
-<h2 class="anchored" data-anchor-id="example-analysis-using-prolfquapp">Example analysis using prolfquapp</h2>
+<section id="example-analysis-of-rmsv000000696.1-dataset-using-prolfquapp" class="level1">
+<h1>Example analysis of RMSV000000696.1 dataset using prolfquapp</h1>
 <p><em>prolfquapp</em> [<a href="https://github.com/prolfqua/prolfquapp" class="uri">https://github.com/prolfqua/prolfquapp</a>] is an R package which can be used to perform differential expression analysis of proteins. It builds upon the core functionalities of the <span class="math inline">\(prolfqua\)</span> package [<a href="https://github.com/fgcz/prolfqua" class="uri">https://github.com/fgcz/prolfqua</a>].</p>
 <p>The data used in this analysis we sourced from <a href="https://massive.ucsd.edu/ProteoSAFe/reanalysis.jsp?task=b88e6fe3f3564773be62eefde7122127">MassIVE Reanalysis - RMSV000000696.1</a>. Two key files <code>report.tsv</code> and <code>msstats.tsv</code> were processed for this study, each approximately 17GB in size. These files were produced from the raw files using the FragPipe DIA workflow <a href="https://fragpipe.nesvilab.org/docs/tutorial_DIA.html" class="uri">https://fragpipe.nesvilab.org/docs/tutorial_DIA.html</a>, and the preprocessing is discussed in more detail in the publication by D.Kohler et al.&nbsp;<a href="https://doi.org/10.1038/s41596-024-01000-3" class="uri">https://doi.org/10.1038/s41596-024-01000-3</a>.</p>
 <p>The dataset has <span class="math inline">\(187\)</span> samples and for more information about the dataset, we refer you to <a href="https://pdc.cancer.gov/pdc/study/PDC000200" class="uri">https://pdc.cancer.gov/pdc/study/PDC000200</a>. The FragPipe DIA workflow identified and quantified <span class="math inline">\(8613\)</span> Proteins.</p>
@@ -169,8 +167,9 @@ window.Quarto = {
 <p>The folders starting with <code>FragPipe_</code> contain the quantification results. Folders starting with <code>QC_</code> contain the output of the <code>prolfqua_qc</code> application while folders starting with <code>DEA_</code> contain the output of the <code>prolfqua_dea</code> application.</p>
 <p>The latest version of the document is available at:</p>
 <p><a href="https://github.com/wolski/DEA_large_dataset_example">https://github.com/wolski/DEA_large_dataset_example</a></p>
-<section id="creating-a-subset-of-20-files" class="level2">
-<h2 class="anchored" data-anchor-id="creating-a-subset-of-20-files">Creating a Subset of 20 files</h2>
+</section>
+<section id="creating-a-subset-of-20-files" class="level1">
+<h1>Creating a Subset of 20 files</h1>
 <p>Using the R code below we created a subset containing data only from <span class="math inline">\(20\)</span> samples out of the <span class="math inline">\(187\)</span> samples.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
@@ -189,8 +188,8 @@ window.Quarto = {
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_tsv</span>(ms20diann, <span class="at">file =</span> <span class="st">"FragPipe_f20_diann/f20_report.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="duplicating-and-triplicating-the-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="duplicating-and-triplicating-the-dataset">Duplicating and triplicating the dataset</h2>
+<section id="duplicating-and-triplicating-the-dataset" class="level1">
+<h1>Duplicating and triplicating the dataset</h1>
 <p>To asses the runtime and memmory usage for larger experiments we duplicte and triplicate the original dataset.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>alld <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_tsv</span>(<span class="st">"FragPipe_f187_diann/report.tsv"</span>)</span>
@@ -212,58 +211,71 @@ window.Quarto = {
 <p>We here define a helper function to compute the run-time and memory usage of the QC and DEA analysis.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#! label: computeruntime.</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>runtime_DEA <span class="ot">&lt;-</span> <span class="cf">function</span>(log_file) {</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  datafLOG <span class="ot">&lt;-</span> <span class="fu">read.table</span>(log_file, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                            <span class="at">comment.char =</span> <span class="st">""</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">skip =</span> <span class="dv">0</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  datafLOG <span class="ot">&lt;-</span> datafLOG[<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"^%CPU"</span>, datafLOG<span class="sc">$</span><span class="st">`</span><span class="at">%CPU</span><span class="st">`</span>), ]</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  datafLOG <span class="ot">&lt;-</span> datafLOG[<span class="sc">-</span><span class="fu">nrow</span>(datafLOG),]</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  datafLOG<span class="sc">$</span>TIME  <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lubridate<span class="sc">::</span><span class="fu">hms</span>(datafLOG<span class="sc">$</span>TIME))</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  datafLOG<span class="sc">$</span>GB <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(datafLOG<span class="sc">$</span>RSS)<span class="sc">/</span>(<span class="dv">1024</span><span class="sc">*</span><span class="dv">1024</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data =</span> datafLOG, <span class="at">maxGB =</span> <span class="fu">max</span>(datafLOG<span class="sc">$</span>GB),</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>              <span class="at">maxTime =</span> <span class="fu">max</span>(datafLOG<span class="sc">$</span>TIME) <span class="sc">/</span> <span class="dv">60</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>runtime_DEA <span class="ot">&lt;-</span> <span class="cf">function</span>(log_file) {</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  datafLOG <span class="ot">&lt;-</span> <span class="fu">read.table</span>(log_file, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">""</span>, <span class="at">fill =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>                            <span class="at">comment.char =</span> <span class="st">""</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">skip =</span> <span class="dv">0</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  datafLOG <span class="ot">&lt;-</span> datafLOG[<span class="sc">!</span><span class="fu">grepl</span>(<span class="st">"^%CPU"</span>, datafLOG<span class="sc">$</span><span class="st">`</span><span class="at">%CPU</span><span class="st">`</span>), ]</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  datafLOG <span class="ot">&lt;-</span> datafLOG[<span class="sc">-</span><span class="fu">nrow</span>(datafLOG),]</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  datafLOG<span class="sc">$</span>TIME  <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(lubridate<span class="sc">::</span><span class="fu">hms</span>(datafLOG<span class="sc">$</span>TIME))</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  datafLOG<span class="sc">$</span>GB <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(datafLOG<span class="sc">$</span>RSS)<span class="sc">/</span>(<span class="dv">1024</span><span class="sc">*</span><span class="dv">1024</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">data =</span> datafLOG, <span class="at">maxGB =</span> <span class="fu">max</span>(datafLOG<span class="sc">$</span>GB),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">maxTime =</span> <span class="fu">max</span>(datafLOG<span class="sc">$</span>TIME) <span class="sc">/</span> <span class="dv">60</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(res)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="setup" class="level2">
-<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<section id="setup" class="level1">
+<h1>Setup</h1>
 <p>We start by cleaning the outputs of previous runs.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> <span class="pp">*</span>.Rmd</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> prolfqua_<span class="pp">*</span>.sh</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> DEA_<span class="pp">*</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-rf</span> qc_<span class="pp">*</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> FragPipe_f187_msstats/<span class="pp">*</span>.log</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> FragPipe_f20_msstats/<span class="pp">*</span>.log</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> FragPipe_f187_diann/<span class="pp">*</span>.log</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> FragPipe_f20_diann/<span class="pp">*</span>.log</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> FragPipe_f374_diann/<span class="pp">*</span>.log</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span> <span class="at">-f</span> FragPipe_f561_diann/<span class="pp">*</span>.log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>Next we deploy the shell scripts provided by the <span class="math inline">\(prolfquapp\)</span> package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--vanilla</span> <span class="at">-e</span> <span class="st">"prolfquapp::copy_shell_script(workdir = '.')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">R</span> <span class="at">--vanilla</span> <span class="at">-e</span> <span class="st">"prolfquapp::copy_shell_script(workdir = '.')"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="diann-reports.tsv-file-for-20-samples" class="level2">
-<h2 class="anchored" data-anchor-id="diann-reports.tsv-file-for-20-samples">DIANN reports.tsv file for 20 samples</h2>
+<section id="diann-reports.tsv-file-for-20-samples" class="level1">
+<h1>DIANN reports.tsv file for 20 samples</h1>
 <p>Create dataset annotation file using information in the <code>mstats.tsv</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f20_diann/dataset_diann_example.xlsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f20_diann/dataset_diann_example.xlsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create QC and sample size estimation report, and generate XLSX file with protein abundance estimates using Tukeys median polish and iBAQ values. The outputs are stored in the <code>qc_dir_f20_diann</code> folder.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_f20_diann</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_f20_diann</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="example-of-parallel-group-design-with-missingness-modelling" class="level3">
-<h3 class="anchored" data-anchor-id="example-of-parallel-group-design-with-missingness-modelling">Example of parallel group design, with missingness modelling</h3>
+<section id="example-of-dea-with-parallel-group-design-with-missingness-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="example-of-dea-with-parallel-group-design-with-missingness-modelling">Example of DEA with parallel group design, with missingness modelling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="at">-d</span> dataset_all_parallel.xlsx <span class="dt">\</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_model_missing_vsn.yml <span class="at">-w</span> f20_diann_with_subject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="at">-d</span> dataset_all_parallel.xlsx <span class="dt">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_model_missing_vsn.yml <span class="at">-w</span> f20_diann_with_subject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Same analysis as before, but we filter for at least 2 peptides per protein.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="at">-d</span> dataset_all_parallel.xlsx <span class="dt">\</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_2_or_more_missing.yml <span class="at">-w</span> f20_diann_with_subject_2PEP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="at">-d</span> dataset_all_parallel.xlsx <span class="dt">\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_2_or_more_missing.yml <span class="at">-w</span> f20_diann_with_subject_2PEP</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="example-of-factorial-design-and-no-missingness-modelling" class="level3">
-<h3 class="anchored" data-anchor-id="example-of-factorial-design-and-no-missingness-modelling">Example of factorial design, and no missingness modelling</h3>
+<section id="example-of-dea-with-factorial-design-and-no-missingness-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="example-of-dea-with-factorial-design-and-no-missingness-modelling">Example of DEA with factorial design, and no missingness modelling</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_vsn.yml <span class="at">-w</span> f20_diann_with_interaction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_vsn.yml <span class="at">-w</span> f20_diann_with_interaction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We rerun the same analysis but filter for two peptides per protein. The filter parameters are defined in the yaml file</p>
 <pre><code>ext_reader:
@@ -271,32 +283,33 @@ window.Quarto = {
   preprocess: prolfquapp::preprocess_DIANN
   get_files: prolfquapp::get_DIANN_files</code></pre>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_2_or_more.yml <span class="at">-w</span> f20_diann_with_interaction_2Peptides</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_2_or_more.yml <span class="at">-w</span> f20_diann_with_interaction_2Peptides</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="example-peptide-level-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="example-peptide-level-analysis">Example PEPTIDE level analysis</h3>
+</section>
+<section id="example-peptide-level-analysis" class="level1">
+<h1>Example PEPTIDE level analysis</h1>
 <p>Note that we use the <code>DIANN_PEPTIDE</code> option here.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN_PEPTIDE <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-y</span> config_model_missing_vsn.yml <span class="dt">\</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> f20_diann_peptide_with_subject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN_PEPTIDE <span class="at">-i</span> FragPipe_f20_diann <span class="dt">\</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-y</span> config_model_missing_vsn.yml <span class="dt">\</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> f20_diann_peptide_with_subject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">undebug</span>(runtime_DEA)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>resDS <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dataset.log"</span>)</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>resQ <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_qc.log"</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>resD1 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dea_2.log"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>resD2 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dea_1.log"</span>)</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>resDPEP <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dea.log"</span>)</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>timing <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"QC"</span>, <span class="st">"DEA1"</span>, <span class="st">"DEA2"</span>,<span class="st">"DEAPEP"</span>),</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">RAM_GB =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxGB, resQ<span class="sc">$</span>maxGB, resD1<span class="sc">$</span>maxGB , resD2<span class="sc">$</span>maxGB, resDPEP<span class="sc">$</span>maxGB),</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time_min =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxTime, resQ<span class="sc">$</span>maxTime, resD1<span class="sc">$</span>maxTime , resD2<span class="sc">$</span>maxTime, resDPEP<span class="sc">$</span>maxTime))</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(timing,<span class="at">caption =</span> <span class="st">"f20 DIANN report tsv input"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">undebug</span>(runtime_DEA)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>resDS <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dataset.log"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>resQ <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_qc.log"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>resD1 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dea_2.log"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>resD2 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dea_1.log"</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>resDPEP <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_diann/prolfqua_logMemUsage_dea.log"</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>timing <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"QC"</span>, <span class="st">"DEA1"</span>, <span class="st">"DEA2"</span>,<span class="st">"DEAPEP"</span>),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">RAM_GB =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxGB, resQ<span class="sc">$</span>maxGB, resD1<span class="sc">$</span>maxGB , resD2<span class="sc">$</span>maxGB, resDPEP<span class="sc">$</span>maxGB),</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time_min =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxTime, resQ<span class="sc">$</span>maxTime, resD1<span class="sc">$</span>maxTime , resD2<span class="sc">$</span>maxTime, resDPEP<span class="sc">$</span>maxTime))</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(timing,<span class="at">caption =</span> <span class="st">"f20 DIANN report tsv input"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>f20 DIANN report tsv input</caption>
@@ -310,60 +323,68 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Dataset</td>
-<td style="text-align: right;">4.057900</td>
-<td style="text-align: right;">1.650000</td>
+<td style="text-align: right;">4.291725</td>
+<td style="text-align: right;">1.450000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">QC</td>
-<td style="text-align: right;">5.466915</td>
-<td style="text-align: right;">7.783333</td>
+<td style="text-align: right;">5.746326</td>
+<td style="text-align: right;">8.466667</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DEA1</td>
-<td style="text-align: right;">4.530422</td>
-<td style="text-align: right;">14.183333</td>
+<td style="text-align: right;">4.775391</td>
+<td style="text-align: right;">12.183333</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">DEA2</td>
-<td style="text-align: right;">4.551475</td>
-<td style="text-align: right;">12.400000</td>
+<td style="text-align: right;">4.693588</td>
+<td style="text-align: right;">13.166667</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DEAPEP</td>
-<td style="text-align: right;">21.034248</td>
-<td style="text-align: right;">112.350000</td>
+<td style="text-align: right;">22.477982</td>
+<td style="text-align: right;">69.883333</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-</section>
-<section id="diann-reports.tsv-file-for-187-samples" class="level2">
-<h2 class="anchored" data-anchor-id="diann-reports.tsv-file-for-187-samples">DIANN reports.tsv file for 187 samples</h2>
+<section id="diann-reports.tsv-file-for-187-samples" class="level1">
+<h1>DIANN reports.tsv file for 187 samples</h1>
+<ul>
+<li>generating a dataset</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f187_diann <span class="dt">\</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f187_diann/dataset_diann_example.xlsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f187_diann <span class="dt">\</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f187_diann/dataset_diann_example.xlsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>generating a qc report</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f187_diann <span class="dt">\</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_f187_diann</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>generating a DEA with factorial design</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f187_diann <span class="dt">\</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_vsn.yml <span class="at">-w</span> f187_diann_with_interaction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f187_diann <span class="dt">\</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_f187_diann</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f187_diann <span class="dt">\</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_vsn.yml <span class="at">-w</span> f187_diann_with_interaction</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>resDS <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f187_diann/prolfqua_logMemUsage_dataset.log"</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>resQ <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f187_diann/prolfqua_logMemUsage_qc.log"</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>resD2 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f187_diann/prolfqua_logMemUsage_dea.log"</span>)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>timing <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"QC"</span>, <span class="st">"DEA1"</span>),</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">RAM_GB =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxGB, resQ<span class="sc">$</span>maxGB,resD2<span class="sc">$</span>maxGB),</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time_min =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxTime, resQ<span class="sc">$</span>maxTime, resD2<span class="sc">$</span>maxTime))</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(timing,<span class="at">caption =</span> <span class="st">"f187 DIANN report tsv input"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>resDS <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f187_diann/prolfqua_logMemUsage_dataset.log"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>resQ <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f187_diann/prolfqua_logMemUsage_qc.log"</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>resD2 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f187_diann/prolfqua_logMemUsage_dea.log"</span>)</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>timing <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"QC"</span>, <span class="st">"DEA1"</span>),</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">RAM_GB =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxGB, resQ<span class="sc">$</span>maxGB,resD2<span class="sc">$</span>maxGB),</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time_min =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxTime, resQ<span class="sc">$</span>maxTime, resD2<span class="sc">$</span>maxTime))</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(timing,<span class="at">caption =</span> <span class="st">"f187 DIANN report tsv input"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <caption>f187 DIANN report tsv input</caption>
@@ -377,102 +398,63 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Dataset</td>
-<td style="text-align: right;">36.64394</td>
-<td style="text-align: right;">12.21667</td>
+<td style="text-align: right;">36.69666</td>
+<td style="text-align: right;">11.45000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">QC</td>
-<td style="text-align: right;">41.25563</td>
-<td style="text-align: right;">43.10000</td>
+<td style="text-align: right;">42.15425</td>
+<td style="text-align: right;">51.58333</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DEA1</td>
-<td style="text-align: right;">38.96134</td>
-<td style="text-align: right;">51.15000</td>
+<td style="text-align: right;">41.48811</td>
+<td style="text-align: right;">65.53333</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="msstats.tsv-formatted-output-for-dataset-with-20-files." class="level2">
-<h2 class="anchored" data-anchor-id="msstats.tsv-formatted-output-for-dataset-with-20-files.">MSstats.tsv formatted output for dataset with 20 files.</h2>
-<p><span class="math inline">\(FragPipe\)</span> can reformat the <span class="math inline">\(DIA-NN\)</span> output in report.tsv to <span class="math inline">\(MSstats\)</span> compatible output. We show here that you can run a similar analysis starting from this output using prolfqua.</p>
-<p>Create dataset annotation file using information in the <code>mstats.tsv</code> file.</p>
+<section id="msstats.tsv-formatted-output-for-dataset-with-20-files." class="level1">
+<h1>MSstats.tsv formatted output for dataset with 20 files.</h1>
+<p><span class="math inline">\(FragPipe\)</span> can reformat the <span class="math inline">\(DIA-NN\)</span> output in report.tsv to <span class="math inline">\(MSstats\)</span> compatible output. We show here that you can run a the same steps as above output using <span class="math inline">\(prolfquapp\)</span>.</p>
+<p>Create dataset annotation file based on information in the <code>mstats.tsv</code> file.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> MSSTATS <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f20_msstats/dataset_msstats20_example.xlsx</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> MSSTATS_FP_DIA <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_msstats20</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> MSSTATS <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f20_msstats/dataset_msstats20_example.xlsx</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> MSSTATS_FP_DIA <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_msstats20</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>generate DEA with factorial design</li>
+</ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> MSSTATS_FP_DIA <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-y</span> config_model_missing_vsn.yml <span class="dt">\</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-w</span> f20_msstats_parallel_with_subject</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> MSSTATS_FP_DIA <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_vsn.yml <span class="at">-w</span> f20_msstats_with_interaction_no_subject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">undebug</span>(runtime_DEA)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>resDS <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_msstats/prolfqua_logMemUsage_dataset.log"</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>resQ <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_msstats/prolfqua_logMemUsage_qc.log"</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>resD1 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_msstats/prolfqua_logMemUsage_dea_1.log"</span>)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>resD2 <span class="ot">&lt;-</span> <span class="fu">runtime_DEA</span>(<span class="st">"FragPipe_f20_msstats/prolfqua_logMemUsage_dea.log"</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>timing <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Dataset"</span>, <span class="st">"QC"</span>, <span class="st">"DEA1"</span>, <span class="st">"DEA2"</span>),</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">RAM_GB =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxGB, resQ<span class="sc">$</span>maxGB, resD1<span class="sc">$</span>maxGB , resD2<span class="sc">$</span>maxGB),</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">Time_min =</span> <span class="fu">c</span>(resDS<span class="sc">$</span>maxTime, resQ<span class="sc">$</span>maxTime, resD1<span class="sc">$</span>maxTime , resD2<span class="sc">$</span>maxTime))</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(timing,<span class="at">caption =</span> <span class="st">"f20 MSstats csv input"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>f20 MSstats csv input</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">name</th>
-<th style="text-align: right;">RAM_GB</th>
-<th style="text-align: right;">Time_min</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Dataset</td>
-<td style="text-align: right;">4.243973</td>
-<td style="text-align: right;">2.183333</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">QC</td>
-<td style="text-align: right;">4.282135</td>
-<td style="text-align: right;">6.900000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">DEA1</td>
-<td style="text-align: right;">4.276932</td>
-<td style="text-align: right;">11.816667</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">DEA2</td>
-<td style="text-align: right;">4.252655</td>
-<td style="text-align: right;">14.116667</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> MSSTATS_FP_DIA <span class="at">-i</span> FragPipe_f20_msstats <span class="dt">\</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">-y</span> config_vsn.yml <span class="at">-w</span> f20_msstats_with_interaction_no_subject</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="diann-report.tsv-with-374-samples." class="level2">
-<h2 class="anchored" data-anchor-id="diann-report.tsv-with-374-samples.">DIANN report.tsv with 374 samples.</h2>
+<section id="diann-report.tsv-with-374-samples." class="level1">
+<h1>DIANN report.tsv with 374 samples.</h1>
 <p>This dataset was create by duplicating the dataset with 187 samples.</p>
+<ul>
+<li>generate dataset file to annotate samples</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f374_diann <span class="dt">\</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f374_diann/dataset_diann_example.xlsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>run qc for 187 files</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f374_diann <span class="dt">\</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_f374_diann</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>generate DEA with factorial design</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f374_diann <span class="dt">\</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
@@ -501,35 +483,44 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Dataset</td>
-<td style="text-align: right;">67.58590</td>
-<td style="text-align: right;">34.76667</td>
+<td style="text-align: right;">67.38482</td>
+<td style="text-align: right;">26.26667</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">QC</td>
-<td style="text-align: right;">74.65197</td>
-<td style="text-align: right;">68.28333</td>
+<td style="text-align: right;">75.00549</td>
+<td style="text-align: right;">77.98333</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DEA1</td>
-<td style="text-align: right;">68.31664</td>
-<td style="text-align: right;">80.23333</td>
+<td style="text-align: right;">67.38080</td>
+<td style="text-align: right;">95.70000</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="diann-report.tsv-with-561-samples." class="level2">
-<h2 class="anchored" data-anchor-id="diann-report.tsv-with-561-samples.">DIANN report.tsv with 561 samples.</h2>
+<section id="diann-report.tsv-with-561-samples." class="level1">
+<h1>DIANN report.tsv with 561 samples.</h1>
 <p>This dataset was create by duplicating the dataset with 187 samples.</p>
+<ul>
+<li>generate dataset to annotate samples</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dataset.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f561_diann <span class="dt">\</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> FragPipe_f561_diann/dataset_diann_example.xlsx</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>generate qc report</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_qc.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f561_diann <span class="dt">\</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_parallel.xlsx <span class="at">-o</span> qc_dir_f561_diann</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li>generate DEA with factorial design</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./prolfqua_dea.sh</span> <span class="at">-s</span> DIANN <span class="at">-i</span> FragPipe_f561_diann <span class="dt">\</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">-d</span> dataset_all_interaction_no_Subject.xlsx <span class="dt">\</span></span>
@@ -558,35 +549,34 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Dataset</td>
-<td style="text-align: right;">98.58623</td>
-<td style="text-align: right;">33.9000</td>
+<td style="text-align: right;">98.62244</td>
+<td style="text-align: right;">32.90000</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">QC</td>
-<td style="text-align: right;">107.50454</td>
-<td style="text-align: right;">89.9000</td>
+<td style="text-align: right;">107.04404</td>
+<td style="text-align: right;">99.81667</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">DEA1</td>
-<td style="text-align: right;">107.27875</td>
-<td style="text-align: right;">100.0167</td>
+<td style="text-align: right;">100.77589</td>
+<td style="text-align: right;">126.98333</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-</section>
 <section id="r-version-and-session-information" class="level1">
 <h1>R version and session information</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pander<span class="sc">::</span><span class="fu">pander</span>(<span class="fu">sessionInfo</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><strong>R version 4.4.1 (2024-06-14)</strong></p>
+<p><strong>R version 4.4.2 (2024-10-31)</strong></p>
 <p><strong>Platform:</strong> x86_64-pc-linux-gnu</p>
 <p><strong>locale:</strong> <em>LC_CTYPE=en_US.UTF-8</em>, <em>LC_NUMERIC=C</em>, <em>LC_TIME=en_US.UTF-8</em>, <em>LC_COLLATE=en_US.UTF-8</em>, <em>LC_MONETARY=en_US.UTF-8</em>, <em>LC_MESSAGES=en_US.UTF-8</em>, <em>LC_PAPER=en_US.UTF-8</em>, <em>LC_NAME=C</em>, <em>LC_ADDRESS=C</em>, <em>LC_TELEPHONE=C</em>, <em>LC_MEASUREMENT=en_US.UTF-8</em> and <em>LC_IDENTIFICATION=C</em></p>
 <p><strong>attached base packages:</strong> <em>stats</em>, <em>graphics</em>, <em>grDevices</em>, <em>utils</em>, <em>datasets</em>, <em>methods</em> and <em>base</em></p>
-<p><strong>loaded via a namespace (and not attached):</strong> <em>digest(v.0.6.37)</em>, <em>codetools(v.0.2-20)</em>, <em>lubridate(v.1.9.3)</em>, <em>fastmap(v.1.2.0)</em>, <em>xfun(v.0.49)</em>, <em>knitr(v.1.49)</em>, <em>htmltools(v.0.5.8.1)</em>, <em>timechange(v.0.3.0)</em>, <em>rmarkdown(v.2.29)</em>, <em>generics(v.0.1.3)</em>, <em>cli(v.3.6.3)</em>, <em>pander(v.0.6.5)</em>, <em>compiler(v.4.4.1)</em>, <em>tools(v.4.4.1)</em>, <em>evaluate(v.1.0.1)</em>, <em>Rcpp(v.1.0.13-1)</em>, <em>yaml(v.2.3.10)</em>, <em>rlang(v.1.1.4)</em>, <em>jsonlite(v.1.8.9)</em> and <em>htmlwidgets(v.1.6.4)</em></p>
+<p><strong>loaded via a namespace (and not attached):</strong> <em>digest(v.0.6.37)</em>, <em>codetools(v.0.2-20)</em>, <em>lubridate(v.1.9.3)</em>, <em>fastmap(v.1.2.0)</em>, <em>xfun(v.0.49)</em>, <em>knitr(v.1.49)</em>, <em>htmltools(v.0.5.8.1)</em>, <em>timechange(v.0.3.0)</em>, <em>rmarkdown(v.2.29)</em>, <em>generics(v.0.1.3)</em>, <em>cli(v.3.6.3)</em>, <em>pander(v.0.6.5)</em>, <em>compiler(v.4.4.2)</em>, <em>tools(v.4.4.2)</em>, <em>evaluate(v.1.0.1)</em>, <em>Rcpp(v.1.0.13-1)</em>, <em>yaml(v.2.3.10)</em>, <em>rlang(v.1.1.4)</em>, <em>jsonlite(v.1.8.9)</em> and <em>htmlwidgets(v.1.6.4)</em></p>
 </div>
 </div>
 </section>

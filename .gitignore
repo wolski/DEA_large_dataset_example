@@ -1,7 +1,6 @@
 DEA_*/
 FragPipe*/
 qc_*/
-*.md
 *.tex
 Readme_*/
 config*.yml

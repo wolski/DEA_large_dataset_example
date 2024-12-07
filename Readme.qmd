@@ -13,7 +13,7 @@ execute:
 engine: knitr
 ---
 
-## Example analysis using prolfquapp
+# Example analysis of RMSV000000696.1 dataset using prolfquapp
 
 *prolfquapp* \[<https://github.com/prolfqua/prolfquapp>\] is an R package which can be used to perform differential expression analysis of proteins. It builds upon the core functionalities of the $prolfqua$ package \[<https://github.com/fgcz/prolfqua>\].
 
@@ -37,15 +37,16 @@ By executing:
 ./p_docker.sh quarto render Readme.qmd --to html
 ```
 
-you will execute all the code blocks in this document.  The shell script `p_docker.sh` file is used to set up the docker container and run the analysis using the $prolfquapp$ installation provided by the docker image.
+you execute all the code blocks in this document.  The shell script `p_docker.sh` file is used to set up the docker container and run the analysis using the $prolfquapp$ installation provided by the docker image.
 
-The folders starting with `FragPipe_` contain the quantification results. Folders starting with `QC_` contain the output of the `prolfqua_qc` application while folders starting with `DEA_` contain the output of the `prolfqua_dea` application.
+The folders starting with `FragPipe_` contain the quantification results. Folders starting with `qc_` contain the output of the `prolfqua_qc` application while folders starting with `DEA_` contain the output of the `prolfqua_dea` application.
 
 The latest version of the document is available at:
-
 [https://github.com/wolski/DEA_large_dataset_example](https://github.com/wolski/DEA_large_dataset_example)
 
-## Creating a Subset of 20 files
+
+
+# Creating a Subset of 20 files
 
 Using the R code below we created a subset containing data only from $20$ samples out of the $187$ samples.
 
@@ -74,7 +75,7 @@ ms20diann <- alldiann[alldiann$File.Name %in% Runs20,]
 readr::write_tsv(ms20diann, file = "FragPipe_f20_diann/f20_report.tsv")
 ```
 
-## Duplicating and triplicating the dataset
+# Duplicating and triplicating the dataset
 
 To asses the runtime and  memmory usage for larger experiments we duplicte and triplicate the original dataset.
 
@@ -110,6 +111,7 @@ We here define a helper function to compute the run-time and memory usage of the
 
 ```{r}
 #! label: computeruntime.
+
 runtime_DEA <- function(log_file) {
   datafLOG <- read.table(log_file, header = TRUE, sep = "", fill = TRUE,
                             comment.char = "", check.names = FALSE,
@@ -127,13 +129,13 @@ runtime_DEA <- function(log_file) {
 
 
 
-## Setup
+# Setup
 
 We start by cleaning the outputs of previous runs.
 
 ```{bash}
 #| label: cleanup
-#| echo: false
+#| echo: true
 #| eval: true
 rm -f *.Rmd
 rm -f prolfqua_*.sh
@@ -157,12 +159,12 @@ Next we deploy the shell scripts provided by the $prolfquapp$ package.
 R --vanilla -e "prolfquapp::copy_shell_script(workdir = '.')"
 ```
 
-## DIANN reports.tsv file for 20 samples
+# DIANN reports.tsv file for 20 samples
 
 Create dataset annotation file using information in the `mstats.tsv` file.
 
 ```{bash}
-#| label: deadiann_f20
+#| label: diann_f20_dataset
 #| eval: true
 ./prolfqua_dataset.sh -s DIANN -i FragPipe_f20_diann \
   -d FragPipe_f20_diann/dataset_diann_example.xlsx
@@ -177,7 +179,7 @@ Create QC and sample size estimation report, and generate XLSX file with protein
   -d dataset_all_parallel.xlsx -o qc_dir_f20_diann
 ```
 
-### Example of parallel group design, with missingness modelling
+## Example of DEA with parallel group design, with missingness modelling
 
 
 ```{bash}
@@ -196,7 +198,7 @@ Same analysis as before, but we filter for at least 2 peptides per protein.
 ```
 
 
-### Example of factorial design, and no missingness modelling
+## Example of DEA with factorial design, and no missingness modelling
 
 ```{bash}
 #| label: factorialf20diann
@@ -225,7 +227,7 @@ ext_reader:
 
 
 
-### Example PEPTIDE level analysis
+# Example PEPTIDE level analysis
 
 Note that we use the `DIANN_PEPTIDE` option here.
 
@@ -254,7 +256,9 @@ timing <- data.frame(name = c("Dataset", "QC", "DEA1", "DEA2","DEAPEP"),
 knitr::kable(timing,caption = "f20 DIANN report tsv input")
 ```
 
-## DIANN reports.tsv file for 187 samples
+# DIANN reports.tsv file for 187 samples
+
+- generating a dataset
 
 ```{bash}
 #| label: qcdiann187makedataset
@@ -264,6 +268,8 @@ knitr::kable(timing,caption = "f20 DIANN report tsv input")
   -d FragPipe_f187_diann/dataset_diann_example.xlsx
 ```
 
+- generating a qc report
+
 ```{bash}
 #| label: qcdiann187qc
 #| 
@@ -271,6 +277,8 @@ knitr::kable(timing,caption = "f20 DIANN report tsv input")
 ./prolfqua_qc.sh -s DIANN -i FragPipe_f187_diann \
   -d dataset_all_parallel.xlsx -o qc_dir_f187_diann
 ```
+
+- generating a DEA with factorial design
 
 ```{bash}
 #| label: deadiann187
@@ -296,11 +304,11 @@ timing <- data.frame(name = c("Dataset", "QC", "DEA1"),
 knitr::kable(timing,caption = "f187 DIANN report tsv input")
 ```
 
-## MSstats.tsv formatted output for dataset with 20 files.
+# MSstats.tsv formatted output for dataset with 20 files.
 
-$FragPipe$ can reformat the $DIA-NN$ output in report.tsv to $MSstats$ compatible output. We show here that you can run a similar analysis starting from this output using prolfqua.
+$FragPipe$ can reformat the $DIA-NN$ output in report.tsv to $MSstats$ compatible output. We show here that you can run a the same steps as above output using $prolfquapp$.
 
-Create dataset annotation file using information in the `mstats.tsv` file.
+Create dataset annotation file based on information in the `mstats.tsv` file.
 
 ```{bash}
 #| label: makedataset20
@@ -311,37 +319,22 @@ Create dataset annotation file using information in the `mstats.tsv` file.
 
 ```
 
+- generate DEA with factorial design
+
 ```{bash}
 #| label: dea20msstats
-./prolfqua_dea.sh -s MSSTATS_FP_DIA -i FragPipe_f20_msstats \
-  -d dataset_all_parallel.xlsx -y config_model_missing_vsn.yml \
-  -w f20_msstats_parallel_with_subject
-  
+
 ./prolfqua_dea.sh -s MSSTATS_FP_DIA -i FragPipe_f20_msstats \
   -d dataset_all_interaction_no_Subject.xlsx \
   -y config_vsn.yml -w f20_msstats_with_interaction_no_subject
+
 ```
 
-```{r}
-#| label: msstats20_timing
-#| echo: true
-#| output: true
-undebug(runtime_DEA)
-resDS <- runtime_DEA("FragPipe_f20_msstats/prolfqua_logMemUsage_dataset.log")
-resQ <- runtime_DEA("FragPipe_f20_msstats/prolfqua_logMemUsage_qc.log")
-resD1 <- runtime_DEA("FragPipe_f20_msstats/prolfqua_logMemUsage_dea_1.log")
-resD2 <- runtime_DEA("FragPipe_f20_msstats/prolfqua_logMemUsage_dea.log")
-
-timing <- data.frame(name = c("Dataset", "QC", "DEA1", "DEA2"),
-  RAM_GB = c(resDS$maxGB, resQ$maxGB, resD1$maxGB , resD2$maxGB),
-  Time_min = c(resDS$maxTime, resQ$maxTime, resD1$maxTime , resD2$maxTime))
-
-knitr::kable(timing,caption = "f20 MSstats csv input")
-```
-
-## DIANN report.tsv with 374 samples.
+# DIANN report.tsv with 374 samples.
 
 This dataset was create by duplicating the dataset with 187 samples.
+
+- generate dataset file to annotate samples
 
 ```{bash}
 #| label: qcdiannf374makedataset
@@ -351,6 +344,8 @@ This dataset was create by duplicating the dataset with 187 samples.
   -d FragPipe_f374_diann/dataset_diann_example.xlsx
 ```
 
+- run qc for 187 files
+
 ```{bash}
 #| label: qcdiannf374
 #| 
@@ -358,6 +353,8 @@ This dataset was create by duplicating the dataset with 187 samples.
 ./prolfqua_qc.sh -s DIANN -i FragPipe_f374_diann \
   -d dataset_all_parallel.xlsx -o qc_dir_f374_diann
 ```
+
+- generate DEA with factorial design
 
 ```{bash}
 #| label: deadiannf374
@@ -367,6 +364,8 @@ This dataset was create by duplicating the dataset with 187 samples.
   -y config_vsn.yml -w f374_diann_with_interaction
 
 ```
+
+
 
 ```{r}
 #| label: alldiannTiming374
@@ -383,9 +382,11 @@ timing <- data.frame(name = c("Dataset", "QC", "DEA1"),
 knitr::kable(timing,caption = "f374 DIANN report tsv input.")
 ```
 
-## DIANN report.tsv with 561 samples.
+# DIANN report.tsv with 561 samples.
 
 This dataset was create by duplicating the dataset with 187 samples.
+
+- generate dataset to annotate samples
 
 ```{bash}
 #| label: qcdiannf561makedataset
@@ -395,6 +396,8 @@ This dataset was create by duplicating the dataset with 187 samples.
   -d FragPipe_f561_diann/dataset_diann_example.xlsx
 ```
 
+- generate qc report
+
 ```{bash}
 #| label: qcdiannf561
 #| 
@@ -402,6 +405,8 @@ This dataset was create by duplicating the dataset with 187 samples.
 ./prolfqua_qc.sh -s DIANN -i FragPipe_f561_diann \
   -d dataset_all_parallel.xlsx -o qc_dir_f561_diann
 ```
+
+- generate DEA with factorial design
 
 ```{bash}
 #| label: deadiannf561

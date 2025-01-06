@@ -3,6 +3,10 @@ title: "Supporting Material S2: Example analysis of a dataset with two factors u
 format:
   html:
     toc: true
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
 editor: visual
 editor_options: 
   chunk_output_type: console
@@ -34,10 +38,10 @@ By executing:
 ```{bash}
 #| label: exmpleusgae
 #| eval: false
-./p_docker.sh quarto render Readme.qmd --to html
+./prolfquapp_docker.sh quarto render Readme.qmd --to html
 ```
 
-you execute all the code blocks in this document.  The shell script `p_docker.sh` file is used to set up the docker container and run the analysis using the $prolfquapp$ installation provided by the docker image.
+you execute all the code blocks in this document.  The shell script `prolfquapp_docker.sh` file is used to set up the docker container and run the analysis using the $prolfquapp$ installation provided by the docker image.
 
 The folders starting with `FragPipe_` contain the quantification results. Folders starting with `qc_` contain the output of the `prolfqua_qc` application while folders starting with `DEA_` contain the output of the `prolfqua_dea` application.
 
